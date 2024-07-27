@@ -54,7 +54,7 @@ export const activityReducer = (
   if(action.type === 'delete-activity'){ //BORRAR ACTIVIDADES
     return{
       ...state,
-      activities: state.activities.filter(activity => activity.id !== action.payload.id)
+      activities: state.activities.filter(activity => activity.id !== action.payload.id )
     }
   }
 
