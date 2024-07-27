@@ -20,6 +20,7 @@ function App() {
         <div className="max-w-4xl mx-auto">
           <Form 
             dispatch={dispatch}
+            state={state}
           />
         </div>
       </section>
@@ -27,6 +28,7 @@ function App() {
       <section className="max-w-4xl mx-auto">
         <ActivityList 
           activities={state.activities}
+          dispatch={dispatch}
         />
       </section>
     </>
