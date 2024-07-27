@@ -6,7 +6,8 @@ import { Activity } from "../types";
 export type ActivityActions = 
   {type: "save-activity", payload: { newActivity: Activity } } | 
   {type: "set-activeId", payload: { id: Activity['id'] }} |
-  {type: "delete-activity", payload: { id: Activity['id'] }}
+  {type: "delete-activity", payload: { id: Activity['id'] }} |
+  {type: "restart-app"}
   
   //payload son los datos que le pasas junto a la accion que lo recupera
   //con | registramos un pipe
@@ -60,6 +61,13 @@ export const activityReducer = (
     return{
       ...state,
       activities: state.activities.filter(activity => activity.id !== action.payload.id )
+    }
+  }
+
+  if(action.type === 'restart-app'){
+    return{
+      activities: [],
+      activeId: ''
     }
   }
 
